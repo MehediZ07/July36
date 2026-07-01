@@ -1,8 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 export default function TributePage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const thread = document.getElementById('thread');
     const dayNow = document.getElementById('dayNow');
@@ -149,19 +152,28 @@ export default function TributePage() {
     <>
       <div className="grain" />
       <div id="thread" />
-      <div className="glass-nav">
+      <div className={`glass-nav${menuOpen ? ' open' : ''}`}>
         <div className="glass-nav-logo">
           <img src="/logo.png" alt="July36 logo" />
         </div>
+        <button
+          type="button"
+          className="glass-nav-toggle"
+          onClick={() => setMenuOpen((state) => !state)}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
+        >
+          {menuOpen ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
+        </button>
         <div className="glass-nav-links">
-          <a href="#home">Home</a>
-          <a href="#origins">Origins</a>
-          <a href="#timeline">Timeline</a>
-          <a href="#blackout">Blackout</a>
-          <a href="#numbers">Numbers</a>
-          <a href="#signature">Signature</a>
-          <a href="#names">Names</a>
-          <a href="#aftermath">Aftermath</a>
+          <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
+          <a href="#origins" onClick={() => setMenuOpen(false)}>Origins</a>
+          <a href="#timeline" onClick={() => setMenuOpen(false)}>Timeline</a>
+          <a href="#blackout" onClick={() => setMenuOpen(false)}>Blackout</a>
+          <a href="#numbers" onClick={() => setMenuOpen(false)}>Numbers</a>
+          <a href="#signature" onClick={() => setMenuOpen(false)}>Signature</a>
+          <a href="#names" onClick={() => setMenuOpen(false)}>Names</a>
+          <a href="#aftermath" onClick={() => setMenuOpen(false)}>Aftermath</a>
         </div>
       </div>
       <div className="daycount mono">DAY <b id="dayNow">01</b> / 36</div>

@@ -44,7 +44,10 @@ body {
   justify-content: space-between;
   gap: 2rem;
   z-index: 310;
-  padding: 0.1rem 1.5rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   width: min(92vw, 1120px);
   max-width: 1120px;
   background: rgba(14, 18, 16, 0.14);
@@ -57,17 +60,48 @@ body {
 .glass-nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.85rem;
   align-items: center;
 }
 
 .glass-nav-logo img {
   height: 4rem;
-  margin-top: .35rem;
+  margin-top: .2rem;
+  margin-bottom: -.5rem;
   width: auto;
   display: block;
   border-radius: 0;
   border: none;
+}
+
+.glass-nav-toggle {
+  display: none;
+  background: rgba(236,230,216,0.08);
+  border: 1px solid rgba(236,230,216,0.16);
+  padding: 0.5rem;
+  margin-left: auto;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  align-self: center;
+  border-radius: 999px;
+  color: var(--wall);
+  transition: background 150ms ease, transform 150ms ease, border-color 150ms ease;
+}
+
+.glass-nav-toggle:hover,
+.glass-nav-toggle:focus {
+  background: rgba(236,230,216,0.16);
+  border-color: rgba(236,230,216,0.26);
+}
+
+.glass-nav-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.glass-nav.open .glass-nav-toggle {
+  transform: rotate(0deg);
 }
 
 .glass-nav a {
@@ -93,15 +127,27 @@ body {
     transform: translateX(-50%);
     justify-content: center;
     flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
   }
   .glass-nav-logo {
     display: none;
+  }
+  .glass-nav-toggle {
+    display: block;
+  }
+  .glass-nav-links {
+    justify-content: center;
+    width: 100%;
+  }
+  .glass-nav a {
+    font-size: 0.72rem;
   }
 }
 
 @media (max-width: 640px) {
   body {
-    padding-top: 86px;
+    padding-top: 0;
   }
   .glass-nav {
     position: fixed;
@@ -111,9 +157,33 @@ body {
     margin: 0;
     border-radius: 0;
     padding: 0.75rem 1rem;
+    width: 100%;
+    transform: none;
+    justify-content: space-between;
+  }
+  .glass-nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(14, 18, 16, 0.95);
+    backdrop-filter: blur(18px);
+    padding: 1rem 1rem 1.25rem;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    box-shadow: 0 24px 40px rgba(0, 0, 0, 0.25);
+    z-index: 320;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .glass-nav.open .glass-nav-links {
+    display: flex;
   }
   .glass-nav a {
-    font-size: 0.65rem;
+    font-size: 0.9rem;
+    text-align: center;
+    min-width: auto;
   }
 }
 a { color: inherit; }
@@ -146,7 +216,7 @@ a { color: inherit; }
 
 .hero {
   min-height: 100svh; position: relative; display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 8vw 6vw 6vw;
+  padding: 4vw 6vw 6vw;
   background: radial-gradient(ellipse at 30% 20%, rgba(200,29,37,0.16), transparent 55%), radial-gradient(ellipse at 80% 80%, rgba(31,110,74,0.12), transparent 50%), var(--ink);
   overflow: hidden; border-bottom: 1px solid rgba(236,230,216,0.1);
 }

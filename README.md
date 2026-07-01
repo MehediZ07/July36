@@ -28,6 +28,5 @@ http://localhost:3000
 
 ## Notes
 
-- `index.html` is ignored in Git and not part of the deployed Next.js app.
 - The main application entry is `app/page.js` and global styling is in `app/globals.css`.
 - Icons are provided by `react-icons`, and fonts are loaded via Google Fonts.

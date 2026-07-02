@@ -222,8 +222,18 @@ a { color: inherit; }
 }
 .hero-rain { position: absolute; inset: 0; z-index: 1; opacity: 0.5; pointer-events: none; }
 .hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
   font-size: clamp(13px,1.6vw,16px); letter-spacing: 0.3em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 1.2rem; position: relative; z-index: 2;
+}
+.flag-chip {
+  width: 2.5em;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  border-radius: 0.2rem;
 }
 .hero-title {
   font-family: 'Anton', sans-serif; font-size: clamp(2.6rem, 12vw, 9.5rem); line-height: 0.9; color: var(--wall); text-transform: uppercase; position: relative; z-index: 2; letter-spacing: -0.01em; max-width: 100%; overflow-wrap: break-word; word-break: break-word; hyphens: auto;
@@ -308,6 +318,25 @@ h2.section-title { font-family: 'Anton', sans-serif; text-transform: uppercase; 
 @media (max-width: 720px) { .numbers-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 420px) { .numbers-grid { grid-template-columns: 1fr; } }
 .num-cell { background: var(--paper); padding: 2.4rem 1.6rem; }
+
+.numbers-section-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr); gap: 4rem; align-items: start; margin-top: 2rem; }
+.numbers-section-grid .sticky-panel {
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+.numbers-sidebar-figure { margin: 0; padding: 0; }
+.numbers-sidebar-image { width: 100%; height: auto; display: block; border-radius: 0.7rem; }
+.numbers-sidebar-note { margin: 0.85rem 0 0; text-align: center; font-size: 0.95rem; line-height: 1.6; color: #6e685e; }
+.numbers-bar-note { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #8a8378; margin-top: 1rem; }
+
+@media (max-width: 880px) {
+  .numbers-section-grid { grid-template-columns: 1fr; }
+  .numbers-section-grid .sticky-panel { position: static; top: auto; }
+}
 .num-value { font-family: 'Anton', sans-serif; font-size: clamp(2.2rem,4.4vw,3.4rem); color: var(--blood); line-height: 1; }
 .num-label { font-family: 'IBM Plex Mono',monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #6b655b; margin-top: 0.6rem; line-height: 1.5; }
 

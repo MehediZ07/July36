@@ -180,7 +180,10 @@ export default function TributePage() {
 
       <div className="hero" id="home">
         <svg className="hero-rain" id="rainSvg" xmlns="http://www.w3.org/2000/svg" />
-        <div className="hero-eyebrow mono">DHAKA · 1 JULY — 5 AUGUST 2024</div>
+        <div className="hero-eyebrow mono">
+          <img className="flag-chip" src="/Bangladesh-flag.png" srcSet="https://flagcdn.com/w80/bd.png 2x" alt="Flag of Bangladesh" />
+          DHAKA · 1 JULY — 5 AUGUST 2024
+        </div>
         <h1 className="hero-title">36 Days<br />That <span className="red">Broke</span><br />the Silence</h1>
         <div className="hero-bn bn">৩৬ দিনের জুলাই অভ্যুত্থান</div>
         <p className="hero-sub">A chronicle of the July Uprising — how a court ruling on civil-service hiring quotas grew, over five weeks of protest, crackdown and blackout, into the mass movement that ended a fifteen-year government.</p>
@@ -303,47 +306,65 @@ export default function TributePage() {
       </section>
 
       <section className="paper pad" id="numbers">
-        <div className="reveal">
-          <div className="eyebrow">By the numbers · পরিসংখ্যান</div>
-          <h2 className="section-title">What the count can tell us</h2>
-          <p className="lede">Every figure below is contested to some degree — a direct consequence of the blackout and curfew. They are presented with their sources, not as a final tally.</p>
-        </div>
+        <div className="numbers-section-grid">
+          <div>
+			<div className="reveal">
+        	  <div className="eyebrow">By the numbers · পরিসংখ্যান</div>
+        	  <h2 className="section-title">What the count can tell us</h2>
+        	  <p className="lede">Every figure below is contested to some degree — a direct consequence of the blackout and curfew. They are presented with their sources, not as a final tally.</p>
+        	</div>
+            <div className="numbers-grid reveal">
+              <div className="num-cell">
+                <div className="num-value">400+</div>
+                <div className="num-label">Deaths documented by the UN Human Rights Office, 16 Jul – 4 Aug 2024</div>
+              </div>
+              <div className="num-cell">
+                <div className="num-value">600+</div>
+                <div className="num-label">Deaths reported in media &amp; movement tallies, 16 Jul – 11 Aug, per the same UN analysis</div>
+              </div>
+              <div className="num-cell">
+                <div className="num-value">1,000+</div>
+                <div className="num-label">Total killed since July, per Bangladesh's health ministry, late August 2024</div>
+              </div>
+              <div className="num-cell">
+                <div className="num-value">6,700+</div>
+                <div className="num-label">Reported injured over the course of the movement</div>
+              </div>
+              <div className="num-cell">
+                <div className="num-value">32+</div>
+                <div className="num-label">Children among the dead, per UNICEF's concern statement</div>
+              </div>
+              <div className="num-cell">
+                <div className="num-value">~10</div>
+                <div className="num-label">Days of near-total internet blackout nationwide</div>
+              </div>
+            </div>
 
-        <div className="numbers-grid reveal">
-          <div className="num-cell">
-            <div className="num-value">400+</div>
-            <div className="num-label">Deaths documented by the UN Human Rights Office, 16 Jul – 4 Aug 2024</div>
+            <div className="bars reveal">
+              <div className="eyebrow numbers-bar-eyebrow">Reported deaths by date — selected days</div>
+              <div className="bar-row"><div className="lbl">16 Jul</div><div className="bar-track"><div className="bar-fill" data-w="8" /></div><div className="val">6</div></div>
+              <div className="bar-row"><div className="lbl">18 Jul</div><div className="bar-track"><div className="bar-fill" data-w="43" /></div><div className="val">32</div></div>
+              <div className="bar-row"><div className="lbl">19 Jul</div><div className="bar-track"><div className="bar-fill" data-w="100" /></div><div className="val">75</div></div>
+              <div className="bar-row"><div className="lbl">4 Aug</div><div className="bar-track"><div className="bar-fill" data-w="95" /></div><div className="val">~100+</div></div>
+              <div className="bar-row"><div className="lbl">5 Aug</div><div className="bar-track"><div className="bar-fill" data-w="60" /></div><div className="val">~40+</div></div>
+              <p className="numbers-bar-note">Figures compiled from contemporaneous reporting (Prothom Alo, The Daily Star, Reuters) and the UN OHCHR preliminary analysis. Undercounting is likely for every date shown.</p>
+            </div>
           </div>
-          <div className="num-cell">
-            <div className="num-value">600+</div>
-            <div className="num-label">Deaths reported in media &amp; movement tallies, 16 Jul – 11 Aug, per the same UN analysis</div>
-          </div>
-          <div className="num-cell">
-            <div className="num-value">1,000+</div>
-            <div className="num-label">Total killed since July, per Bangladesh's health ministry, late August 2024</div>
-          </div>
-          <div className="num-cell">
-            <div className="num-value">6,700+</div>
-            <div className="num-label">Reported injured over the course of the movement</div>
-          </div>
-          <div className="num-cell">
-            <div className="num-value">32+</div>
-            <div className="num-label">Children among the dead, per UNICEF's concern statement</div>
-          </div>
-          <div className="num-cell">
-            <div className="num-value">~10</div>
-            <div className="num-label">Days of near-total internet blackout nationwide</div>
-          </div>
-        </div>
 
-        <div className="bars reveal">
-          <div className="eyebrow" style={{ marginTop: '3rem' }}>Reported deaths by date — selected days</div>
-          <div className="bar-row"><div className="lbl">16 Jul</div><div className="bar-track"><div className="bar-fill" data-w="8" /></div><div className="val">6</div></div>
-          <div className="bar-row"><div className="lbl">18 Jul</div><div className="bar-track"><div className="bar-fill" data-w="43" /></div><div className="val">32</div></div>
-          <div className="bar-row"><div className="lbl">19 Jul</div><div className="bar-track"><div className="bar-fill" data-w="100" /></div><div className="val">75</div></div>
-          <div className="bar-row"><div className="lbl">4 Aug</div><div className="bar-track"><div className="bar-fill" data-w="95" /></div><div className="val">~100+</div></div>
-          <div className="bar-row"><div className="lbl">5 Aug</div><div className="bar-track"><div className="bar-fill" data-w="60" /></div><div className="val">~40+</div></div>
-          <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '10.5px', color: '#8a8378', marginTop: '1rem' }}>Figures compiled from contemporaneous reporting (Prothom Alo, The Daily Star, Reuters) and the UN OHCHR preliminary analysis. Undercounting is likely for every date shown.</p>
+          <div className="reveal sticky-panel">
+            <figure className="numbers-sidebar-figure">
+              <img
+                src="/July36-map.png"
+                alt="Map of Bangladesh showing reported death tolls by district during the 2024 uprising"
+                loading="lazy"
+                decoding="async"
+                className="numbers-sidebar-image"
+              />
+            </figure>
+            <p className="numbers-sidebar-note">
+              Reported deaths by district, compiled independently on <a href="https://commons.wikimedia.org/wiki/File:2024_Bangladesh_Quota_Reform_Movement_death_tolls_by_district_(en).svg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0 — a separate tally from the figures above, included to show the geographic spread.
+            </p>
+          </div>
         </div>
       </section>
 
